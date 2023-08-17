@@ -13,12 +13,17 @@ def get_started(message):
 
 @bot.message_handler(commands = ['help'])
 def help(message):
-    bot.send_message(message.from_user.id, """/last_selfie - Мое последнее селфи\n/school_photo - Мое фото из старшей школы\n/voices - Меню для получения голосовых сообщений\n/rep_url - Ссылка на проект""")
+    bot.send_message(message.from_user.id, """/last_selfie - Мое последнее селфи\n/school_photo - Мое фото из старшей школы\n/hobby - Пост про моё увлечение\n/voices - Меню для получения голосовых сообщений\n/rep_url - Ссылка на проект""")
       
       
 @bot.message_handler(commands = ['last_selfie'])
 def send_selfie(message):
     bot.send_photo(message.from_user.id,photo=open('images/selfie.jpg', 'rb'))
+
+
+@bot.message_handler(commands = ['hobby'])
+def send_post(message):
+    bot.send_message(message.from_user.id,"Я очень люблю хоккей. Будучи в школе играл в хоккей за свою городскую команду на позиции правого нападающего. Сейчас играю в хоккей только зимой, но в будущем надеюсь купить хоккейную форму и играть чаще.")
 
 
 @bot.message_handler(commands = ['school_photo'])
