@@ -46,7 +46,7 @@ def open_voice_menu(message):
 def send_selfie(message):
     bot.send_message(message.from_user.id,"https://github.com/antonnurapkin/telegram_bot.git")
 
-# Обработчик нажатий кнопки
+# Обработчик нажатий на кнопки
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
     if call.data == 'gpt':
